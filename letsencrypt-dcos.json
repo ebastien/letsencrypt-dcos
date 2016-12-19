@@ -20,7 +20,7 @@
       }
     ],
     "docker": {
-      "image": "mesosphere/letsencrypt-dcos:v1.0.3",
+      "image": "dashaun/letsencrypt-dcos",
       "network": "BRIDGE",
       "portMappings": [
         {
