@@ -22,9 +22,9 @@ done
 echo "DOMAIN_ARGS: ${DOMAIN_ARGS}"
 echo "DOMAIN_FIRST: ${DOMAIN_FIRST}"
 
-echo "Running certbot to generate initial signed cert instead of cerbot-auto with this updated Dockerfile (dashaun/letsencrypt-dcos)"
+echo "Running certbot to generate initial signed cert instead of cerbot-auto with this updated Dockerfile (ebastien/letsencrypt-dcos)"
 certbot certonly --standalone \
-  --standalone-supported-challenges http-01 $DOMAIN_ARGS \
+  --standalone-supported-challenges http-01 --http-01-port $PORT0 $DOMAIN_ARGS \
   --email $LETSENCRYPT_EMAIL --agree-tos --noninteractive --no-redirect \
   --rsa-key-size 4096 --expand
 
